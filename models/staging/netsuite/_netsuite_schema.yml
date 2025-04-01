@@ -1,0 +1,75 @@
+version: 2
+
+sources:
+  - name: netsuite
+    description: Taking out of Net Suite by Fivetran.
+    freshness: 
+      filter: _fivetran_deleted IS FALSE
+    schema: netsuite_suiteanalytics_2
+
+    tables:
+      - name: products
+        identifier: item
+        description: Products information such as costs, size and website info.
+
+      - name: msrp
+        identifier: itemprice
+        description: Product price information that doesn't live in the product table taking out of Netsuite by Fivetran.
+
+      - name: location
+        identifier: location
+        description: All locations carrying our inventory stored in NetSuite.
+
+      - name: inventory
+        identifier: aggregateitemlocation
+        description: Item quantity on hand by locations.
+      
+      - name: item_merc_hierarchy
+        identifier: merchandisehierarchyinventoryitemversion
+        description: Merchandising hierarchy ID information
+
+      - name: item_merc_division
+        identifier: customlist_psgss_merc_division
+        description: Merchandising hierarchy ID information
+      
+      - name: item_merc_node
+        identifier: merchandisehierarchynode
+        description: Merchandising hierarchy information about each item.
+
+      - name: seasons
+        identifier: customlist_psgss_season
+        description: Merchandising hierarchy information about each item.
+
+      - name: transactions
+        identifier: transaction
+        description: Transactions data generated and stored in Net Suite.
+      - name: tracking_map
+        identifier: trackingnumbermap
+        description: Transactions data generated and stored in Net Suite.
+      - name: tracking_num
+        identifier: trackingnumber
+        description: Transactions data generated and stored in Net Suite.
+      - name: departments
+        identifier: customlist_psgss_merc_dept
+        description: Product departments 
+      - name: classes
+        identifier: customlist_psgss_merc_class
+        description: Product classes
+      - name: subclasses
+        identifier: customlist_psgss_merc_subclass
+        description: Product subclasses
+      - name: sizes
+        identifier: customlist_psgss_product_size
+        description: Product sizes
+
+
+  
+  - name: sean
+    description: Sean's manually updated SKU information sheet
+    database: cuts1
+    schema: gsheets
+    tables:
+      - name: sku_master
+        identifier: tableau_additionalsources_sku master
+        description: Sean's manual SKU sheet.
+

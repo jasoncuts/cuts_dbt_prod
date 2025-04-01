@@ -1,0 +1,21 @@
+version: 2
+
+sources:
+  - name: google
+    description: Data from our google analytics report export.
+    database: cuts1
+    schema: google
+    tables:
+      - name: utm
+        identifier: utm_performance
+        description: UTM performance report export from GA
+        
+  - name: ga4
+    description: Data from our google analytics report export.
+    schema: analytics_304914282
+    tables:
+      - name: event
+        identifier: events_20*
+        description: UTM performance report export from GA
+
+ 

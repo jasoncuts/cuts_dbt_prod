@@ -1,0 +1,69 @@
+version: 2
+
+sources:
+
+  - name: shopify_us
+    description: Airbyte ingested Shopify US data.
+    schema: shopify_prod_airbyte
+    tables:
+      - name: orders
+        identifier: orders
+        description: Order data taking in from Fivetran
+
+      - name: lineitems
+        identifier: order_line
+        description: Order lineitems data taking in from Fivetran
+
+      - name: transactions
+        identifier: transactions
+        description: Account & order transaction data being taken in from Fivetran
+
+      - name: customers
+        identifier: customers
+        description: Customer data taking in from Fivetran
+
+      - name: shipping
+        identifier: order_shipping_line
+        description: Shipping information to each order
+
+      - name: discounts
+        identifier: discount_application
+        description: Shipping information to each order
+
+      - name: fulfillment
+        identifier: fulfillments
+        description: Shipping information to each order
+
+      - name: refund
+        identifier: order_refunds
+        description: Order level return
+
+      - name: lineitems_refund
+        identifier: order_line_refund
+        description: Line items level return
+
+      - name: lineitems_discount
+        identifier: discount_allocation
+        description: Line items level return
+
+      - name: draft_orders
+        identifier: draft_orders
+        description: Line items level return
+      
+      - name: product_variants
+        identifier: product_variants
+        description: Product variants information
+
+      - name: product_images
+        identifier: product_images
+        description: Product images
+
+      - name: products
+        identifier: products
+        description: Products information
+      - name: collection
+        identifier: collection
+        description: collection information
+      - name: collection_product
+        identifier: collection_product
+        description: collection product information

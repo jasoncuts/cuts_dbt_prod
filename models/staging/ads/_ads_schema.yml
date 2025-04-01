@@ -1,0 +1,112 @@
+version: 2
+
+sources:
+  - name: google
+    description: Google Ads data taken out by Fivetran
+    schema: google_ads
+    tables:
+      - name: campaigns_daily
+        identifier: campaign
+        description: Google ads data by campaign by day.
+      - name: campaign_history
+        identifier: campaign_history
+        description: Google ads data by campaign by day.
+      - name: ads_daily
+        identifier: ad_stats
+        description: Google ads data by day
+      - name: ads_info
+        identifier: ad_history
+        description: Google ads information.
+      - name: ad_group_info
+        identifier: ad_group_history
+        description: Google ad groups information.
+
+  - name: tiktok
+    description: Tiktok Ads data taken out by Fivetran
+    schema: tiktok_ads
+    tables:
+      - name: adgroup_daily
+        identifier: ad_groups_reports_daily
+        description: Tiktok ads data by ad by day.
+      
+      - name: adgroup_history
+        identifier: ad_groups
+        description: Tiktok ads data by ad by day.
+
+      - name: ad_history
+        identifier: ads
+        description: Tiktok ads data by ad by day.
+
+      - name: campaign_history
+        identifier: campaigns
+        description: Tiktok ads data by ad by day.  
+
+      - name: ads_daily
+        identifier: ads_reports_daily
+        description: Tiktok ads data by ad by day.  
+
+  - name: facebook
+    description: Facebook Ads data taken out by Fivetran
+    schema: facebook_ads
+    tables:
+      - name: ads_daily
+        identifier: ads_insights
+        description: Facebook ads data by ad by day.
+      - name: actions_daily
+        identifier: actions_value_report_actions
+        description: Facebook ads actions by ad by day.
+      - name: action_values_daily
+        identifier: actions_value_report_action_values
+        description: Facebook ads action values by ad by day.
+      - name: campaign_info
+        identifier: campaign_history
+        description: Facebook campaign information.
+      - name: adsets_info
+        identifier: ad_set_history
+        description: Facebook adsets information.
+      - name: ads_info
+        identifier: ad_history
+        description: Facebook ads information.
+      - name: adsets_audience
+        identifier: ad_set_custom_audience
+        description: Ad sets to audience key join.
+      - name: creative_info
+        identifier: creative_history
+        description: Ad sets to audience key join.
+      - name: audience
+        identifier: custom_audience_history
+        description: Audience historyc information.
+      - name: landing_page
+        identifier: landing_page
+        description: Ads id information with its landing page info.
+
+  - name: influencer
+    description: Inluencer spend data out of Airtable taken out by Fivetran
+    schema: airtable_influencer_budget_tracker_app9d5hlilh8z61pe
+    tables:
+      - name: daily_spend
+        identifier: _2023_budget_planner
+        description: Influencer spending data by day.
+
+  - name: gsheets
+    description: Other spends than Ads channel taken out by Fivetran
+    schema: gsheets
+    tables:
+      - name: otherspends
+        identifier: otherspends
+        description: otherspends data except Ads day by day.
+      - name: other_revenue
+        identifier: other_revenue
+        description: other revenue data.
+      
+      - name: product_title_url_mapping
+        identifier: product_title_url_mapping
+        description: map the product names with the url.
+
+  - name: cuts_combined
+    description: Other spends than Ads channel taken out by Fivetran
+    schema: cuts_combined
+    tables:
+      - name: product_title_url_mapping
+        identifier: product_url_mapping
+        description: map the product names with the url.
