@@ -2,7 +2,7 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'my_new_project'
+name: 'cuts_sales'
 version: '1.0.0'
 config-version: 2
 
@@ -36,7 +36,60 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 
 models:
-  my_new_project:
-    # Applies to all files under models/example/
-    example:
-      +materialized: table
+  cuts_sales:
+    mart: 
+      +materialize: table
+      analysis:
+        +schema: mart_analysis
+      reporting:
+        +schema: mart_report
+      ads:
+        +schema: mart_ads
+      sales:
+        +schema: mart_sales
+      site:
+        +schema: mart_site
+      input:
+        +schema: mart_inputs
+      plans:
+        +schema: mart_plans
+      ops:
+        +schema: mart_ops
+
+    intermediate:
+      +materialize: table
+      analysis:
+        +schema: mart_analysis
+      reporting:
+        +schema: mart_report
+      ads:
+        +schema: mart_ads
+      sales:
+        +schema: mart_sales
+      site:
+        +schema: mart_site
+      input:
+        +schema: mart_inputs
+      plans:
+        +schema: mart_plans
+      ops:
+        +schema: mart_ops
+
+
+    staging:
+      +materialize: view
+      shopify:
+        +schema: shopify_us
+      netsuite:
+        +schema: net_suite
+      dates:
+        +schema: dates
+      ads:
+        +schema: ads
+      heap:
+        +schema: heap
+      google_analytics:
+        +schema: google
+      budget:
+        +schema: budget
+

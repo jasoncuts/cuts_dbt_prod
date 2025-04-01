@@ -1,0 +1,55 @@
+version: 2
+
+sources:
+  - name: gsheet
+    description: Google Sheets Data.
+    schema: gsheets
+    tables:
+      - name: cogs_estimate
+        identifier: cogs_overhead_assumption__main_sheet
+        description: Paid spends daily budget by Avi broken out by
+      - name: product_category_mapping
+        identifier: product_category_mapping
+        description: Product Category Meeting
+      - name: forecasts 
+        identifier: forecasts_master
+        description: Forecasting metrics that lives in the Q423 Forecast.
+
+      - name: q124_forecasts 
+        identifier: q1_24_forecasts
+        description: Forecasting metrics that lives in the Q423 Forecast.
+      - name: q_224_forecast 
+        identifier: q_224_forecast
+        description: Forecasting metrics that lives in the Q224 Forecast.
+      - name: q_224_plan
+        identifier: q224_plan
+        description: Forecasting metrics that lives in the Q224 Forecast.
+      - name: q_324_plan
+        identifier: q_324_plan
+        description: Forecasting metrics that lives in the Q324 Forecast.
+      - name: influencer_spend_breakdown
+        identifier: influencer_spend_breakdown
+        description: Daily influencer spend breakdown by men and women.
+      - name: ad_product 
+        identifier: ad_product_tag
+        description: Forecasting metrics that lives in the Q423 Forecast.
+      
+
+  - name: streamlit
+    description: Google Ads data taken out by Fivetran
+    database: cuts1
+    schema: streamlit
+    tables:
+      - name: st_budget
+        identifier: stg_st_saved_budget
+        description: Paid spends daily budget by Avi broken out by platform.
+      - name: st_sales
+        identifier: stg_st_saved_sales
+        description: Planned sales and offering 
+      - name: st_goal
+        identifier: stg_st_saved_goals
+        description: Planned sales and offering 
+      - name: st_forecast
+        identifier: stg_st_saved_forecast
+        description: Planned sales and offering 
+ 
