@@ -4,7 +4,7 @@ WITH orders_channel AS (
     SELECT *
     FROM {{ ref('int_orders_channels') }}
     WHERE cancelled_at IS NULL
-      AND order_source IN ('Sales Order', 'Mobile App')
+      AND order_source IN ('Sales Order', 'Mobile App', 'Hydrogen')
 ),
 
 orders_with_features AS (

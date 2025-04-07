@@ -76,6 +76,11 @@ orders AS
             (
                 source_name = '158139842561'
             )THEN 'Mobile App'
+            WHEN
+            (
+                source_name = '6167201' OR
+                source_name = '426072'
+            )THEN 'Hydrogen'
             WHEN  
             (
                  source_name  ='web' OR 
