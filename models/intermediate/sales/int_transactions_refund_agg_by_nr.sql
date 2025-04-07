@@ -12,7 +12,7 @@ WITH refund AS
         , suffix = '_refund')}}
     ,sum(usd_amount) AS tot_refund
     FROM {{ref('mart_transactions')}}
-    WHERE transaction_type = 'refund'
+    WHERE lower(transaction_type) = 'refund'
     GROUP BY 1
 )
 
