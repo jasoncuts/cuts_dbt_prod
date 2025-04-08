@@ -1,5 +1,5 @@
 select
-   segments_date
+   segments_date  as date
     ,'google' AS platform
     ,CASE WHEN  lower(campaign_name) LIKE '%women%' AND lower(segments_ad_network_type) LIKE 'youtube%' THEN 'wom_youtube'
     WHEN  lower(campaign_name) LIKE '%women%' AND lower(segments_ad_network_type) LIKE 'search%' AND lower(campaign_name) LIKE '%brand%'   THEN 'wom_branded_search'
